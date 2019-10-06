@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>demo</title>
+
+    <link rel="stylesheet" href="./asset/style/main.css">
+    <link rel="stylesheet" href="./asset/fontawesome/css/all.css">
+
+    <script defer src="./asset/fontawesome/js/all.js"></script>
+    <script defer src="./asset/js/main.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <div class="nav" id="left">
+            <span class="fa fa-chevron-left fa-3x move-icon"></span>
+        </div>
+        <div class="nav" id="right">
+            <span class="fa fa-chevron-right fa-3x move-icon"></span>
+        </div>
+
+        <div id="loading" class="lds-dual-ring"></div>
+
+        <video id="video" controls="false" muted="true">
+            <source src="./asset/video/clip.mp4" type="video/mp4">
+        </video>
+
+        <canvas id="myCanvas" width="900" height="500">
+            Your browser does not support the HTML5 canvas tag.
+        </canvas>
+    </div>
+</body>
+</html>

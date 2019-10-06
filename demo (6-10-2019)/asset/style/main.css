@@ -1,0 +1,89 @@
+#content {
+    overflow: hidden;
+    position: fixed;
+    width: 900px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #141517;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 45px 100px rgba(0, 0, 0, 0.4);
+    padding: 5px;
+}
+
+#slider {
+    display: none;
+}
+
+.nav {
+    width: 100px;
+    height: inherit;
+    position:fixed;
+    z-index:9;
+    cursor:pointer;
+    color: #fff;
+    opacity: 0.3;
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+    background: rgb(0,0,0);
+
+}
+
+.nav:hover {
+    opacity:0.7;
+}
+
+#left {
+    left:0;
+}
+
+#right {
+    right:0;
+}
+
+.move-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#video {
+    display: none;
+}
+
+.lds-dual-ring {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hidden-loading {
+    display: none;
+}

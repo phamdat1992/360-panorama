@@ -1,0 +1,17 @@
+#content {
+    overflow: hidden;
+    width: 580px;
+    height: 360px;
+}
+
+#myCanvas {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0px;
+    left: 0px;
+}
+
+#slider {
+    display: none;
+}
