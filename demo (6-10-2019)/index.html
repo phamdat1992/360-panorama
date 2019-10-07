@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>demo</title>
 
+    <link rel="preload" as="fetch" href="./asset/video/clip.mp4" type="video/mp4">
+
     <link rel="stylesheet" href="./asset/style/main.css">
     <link rel="stylesheet" href="./asset/fontawesome/css/all.css">
 
@@ -23,8 +25,8 @@
 
         <div id="loading" class="lds-dual-ring"></div>
 
-        <video id="video" controls="false" muted="true">
-            <source src="./asset/video/clip.mp4" type="video/mp4">
+        <video id="video" controls="false" muted="true" type="video/mp4">
+            <p>Your browser does not support the video element.</p>
         </video>
 
         <canvas id="myCanvas" width="900" height="500">

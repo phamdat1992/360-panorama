@@ -1,6 +1,10 @@
 let processor = {
     timerCallback: function() {
-        this.video.currentTime += 1/this.fps*this.videoSpeed;
+        if(this.video.readyState === 4) {
+            this.video.currentTime += 1 / this.fps * this.videoSpeed;
+        } else {
+            this.video.currentTime = 0;
+        }
 
         if (this.video.duration <= this.video.currentTime) {
             this.video.currentTime = this.video.duration;
@@ -40,11 +44,30 @@ let processor = {
         this.defaultSpeed = 3;
         this.videoSpeed = 0;
 
-        this.video.oncanplaythrough = function () {
-            this.timerCallback();
-            this.initVideoEvent();
-            this.loading.classList.add("hidden-loading");
-        }.bind(this);
+        const mediaSource = new MediaSource();
+        this.video.src = URL.createObjectURL(mediaSource);
+        mediaSource.addEventListener('sourceopen', function(){
+            URL.revokeObjectURL(this.video.src);
+            const sourceBuffer = mediaSource.addSourceBuffer('video/mp4; codecs="vp09.00.10.08"');
+
+            // If video is preloaded already, fetch will return immediately a response
+            // from the browser cache (memory cache). Otherwise, it will perform a
+            // regular network fetch.
+            fetch('./asset/video/clip.mp4', { mode: "no-cors" })
+                .then(response => response.arrayBuffer())
+                .then(data => {
+                    // Append the data into the new sourceBuffer.
+                    sourceBuffer.appendBuffer(data);
+                    this.video.addEventListener("canplaythrough", function(){
+                        this.timerCallback();
+                        this.initVideoEvent();
+                        this.loading.classList.add("hidden-loading");
+                    }.bind(this), { once: true });
+                })
+                .catch(error => {
+                    // TODO: Show "Video is not available" message to user.
+                });
+        }.bind(this), { once: true });
     },
 
     computeFrame: function() {
