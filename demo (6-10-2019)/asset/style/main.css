@@ -14,43 +14,6 @@
     padding: 5px;
 }
 
-#slider {
-    display: none;
-}
-
-.nav {
-    width: 100px;
-    height: inherit;
-    position:fixed;
-    z-index:9;
-    cursor:pointer;
-    color: #fff;
-    opacity: 0.3;
-    transition: all 0.66s ease;
-    -webkit-transition: all 0.66s ease;
-    background: rgb(0,0,0);
-
-}
-
-.nav:hover {
-    opacity:0.7;
-}
-
-#left {
-    left:0;
-}
-
-#right {
-    right:0;
-}
-
-.move-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 #video {
     display: none;
 }
@@ -86,4 +49,33 @@
 
 .hidden-loading {
     display: none;
+}
+
+#control {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+    width: 105px;
+    height: 80px;
+    position: fixed;
+    bottom: -30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#button-left, #button-right {
+    color: white;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+#button-left {
+    position: absolute;
+    left: 5px;
+}
+
+#button-right {
+    position: absolute;
+    right: 5px;
 }

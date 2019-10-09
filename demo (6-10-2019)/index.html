@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>demo</title>
 
-    <link rel="preload" as="fetch" href="./asset/video/clip.mp4" type="video/mp4">
-
     <link rel="stylesheet" href="./asset/style/main.css">
     <link rel="stylesheet" href="./asset/fontawesome/css/all.css">
 
@@ -15,23 +13,25 @@
 </head>
 
 <body>
-    <div id="content">
-        <div class="nav" id="left">
-            <span class="fa fa-chevron-left fa-3x move-icon"></span>
+<div id="content">
+    <div id="control">
+        <div id="button-left">
+            <span class=" fa fa-reply fa-2x button-move-left"></span>
         </div>
-        <div class="nav" id="right">
-            <span class="fa fa-chevron-right fa-3x move-icon"></span>
+        <div id="button-right">
+            <span class=" fa fa-share fa-2x button-move-right"></span>
         </div>
-
-        <div id="loading" class="lds-dual-ring"></div>
-
-        <video id="video" controls="false" muted="true" type="video/mp4">
-            <p>Your browser does not support the video element.</p>
-        </video>
-
-        <canvas id="myCanvas" width="900" height="500">
-            Your browser does not support the HTML5 canvas tag.
-        </canvas>
     </div>
+    <!--<div id="loading" class="lds-dual-ring"></div>-->
+
+    <video id="video" controls="false" muted="true" type="video/mp4">
+        <source src="./asset/video/clip_03.mp4" type="video/mp4">
+        <p>Your browser does not support the video element.</p>
+    </video>
+
+    <canvas id="canvas" width="900" height="500">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+</div>
 </body>
 </html>
