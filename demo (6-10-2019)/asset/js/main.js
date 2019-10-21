@@ -97,10 +97,19 @@ let processor = {
     },
 
     timerCallback: function() {
-        if(this.video.readyState === 4) {
+        if (this.video.readyState === 4) {
+            if (this.residual !== undefined) {
+                if (this.residual > 0) {
+                    this.residual = (this.residual > 2) ? this.residual - 2 : 0;
+                } else {
+                    this.residual = (this.residual < -2) ? this.residual + 2 : 0;
+                }
+            }
             if (this.resetView === true) {
                 this.video.currentTime = this.video.duration/2.0;
                 this.resetView = false;
+                this.videoSpeed = 0;
+            } else if (this.residual === 0 || this.residual === undefined) {
                 this.videoSpeed = 0;
             } else {
                 if (this.videoSpeed !== 0) {
@@ -167,28 +176,36 @@ let processor = {
     },
 
     initEvent: function() {
-        this.rightButton.addEventListener("mousedown", function() {
-            if (this.state.playLeftToRight === true) {
-                this.videoSpeed = this.defaultSpeed;
-            } else {
-                this.videoSpeed = -this.defaultSpeed;
+        this.content.addEventListener("mousemove", function(e) {
+            if (this.lastPoint !== undefined) {
+                this.residual += (e.clientX - this.lastPoint)*4;
+                this.lastPoint = e.clientX;
+
+                if (this.residual < 0) {
+                    if (this.state.playLeftToRight === true) {
+                        this.videoSpeed = this.defaultSpeed;
+                    } else {
+                        this.videoSpeed = -this.defaultSpeed;
+                    }
+                } else {
+                    if (this.state.playLeftToRight === true) {
+                        this.videoSpeed = -this.defaultSpeed;
+                    } else {
+                        this.videoSpeed = this.defaultSpeed;
+                    }
+                }
+            }
+        }.bind(this), false);
+        this.content.addEventListener("mousedown", function(e) {
+            if (this.lastPoint === undefined) {
+                this.lastPoint = e.clientX;
+                this.residual = 0;
             }
         }.bind(this), false);
 
-        this.rightButton.addEventListener("mouseup", function() {
+        this.content.addEventListener("mouseup", function() {
             this.videoSpeed = 0.0;
-        }.bind(this), false);
-
-        this.leftButton.addEventListener("mousedown", function() {
-            if (this.state.playLeftToRight === true) {
-                this.videoSpeed = -this.defaultSpeed;
-            } else {
-                this.videoSpeed = this.defaultSpeed;
-            }
-        }.bind(this), false);
-
-        this.leftButton.addEventListener("mouseup", function() {
-            this.videoSpeed = 0.0;
+            this.lastPoint = undefined;
         }.bind(this), false);
 
         this.moveLeft.addEventListener("click", function() {
@@ -216,36 +233,10 @@ let processor = {
         this.video.src = this.state.url;
         this.video.pause();
         this.resetView = true;
-
-        /*
-        if (this.state.map.forward === undefined) {
-            this.moveForward.classList.add("hidden-move-button");
-        } else {
-            this.moveForward.classList.remove("hidden-move-button");
-        }
-
-        if (this.state.map.back === undefined) {
-            this.moveBack.classList.add("hidden-move-button");
-        } else {
-            this.moveBack.classList.remove("hidden-move-button");
-        }
-
-        if (this.state.map.left === undefined) {
-            this.moveLeft.classList.add("hidden-move-button");
-        } else {
-            this.moveLeft.classList.remove("hidden-move-button");
-        }
-
-        if (this.state.map.right === undefined) {
-            this.moveRight.classList.add("hidden-move-button");
-        } else {
-            this.moveRight.classList.remove("hidden-move-button");
-        }*/
     },
 
     doLoad: function() {
-        this.leftButton = document.getElementById("button-left");
-        this.rightButton = document.getElementById("button-right");
+        this.content = document.getElementById("content");
 
         this.moveLeft = document.getElementById("move-left");
         this.moveRight = document.getElementById("move-right");
@@ -260,6 +251,7 @@ let processor = {
         this.defaultSpeed = 15;
         this.videoSpeed = 0;
         this.state = this.config[6];
+        this.lastPoint = undefined;
 
         this.initView();
         this.initEvent();
