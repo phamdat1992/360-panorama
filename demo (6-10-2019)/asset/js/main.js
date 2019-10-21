@@ -178,7 +178,7 @@ let processor = {
     initEvent: function() {
         this.content.addEventListener("mousemove", function(e) {
             if (this.lastPoint !== undefined) {
-                this.residual += (e.clientX - this.lastPoint)*4;
+                this.residual += (e.clientX - this.lastPoint)*8;
                 this.lastPoint = e.clientX;
 
                 if (this.residual < 0) {
@@ -248,7 +248,7 @@ let processor = {
         this.loading = document.getElementById("loading");
         this.ctx = this.canvas.getContext("2d");
         this.fps = 24;
-        this.defaultSpeed = 15;
+        this.defaultSpeed = 35;
         this.videoSpeed = 0;
         this.state = this.config[6];
         this.lastPoint = undefined;
