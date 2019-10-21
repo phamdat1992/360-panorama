@@ -100,9 +100,9 @@ let processor = {
         if (this.video.readyState === 4) {
             if (this.residual !== undefined) {
                 if (this.residual > 0) {
-                    this.residual = (this.residual > 2) ? this.residual - 2 : 0;
+                    this.residual = (this.residual > 16) ? this.residual - 16 : 0;
                 } else {
-                    this.residual = (this.residual < -2) ? this.residual + 2 : 0;
+                    this.residual = (this.residual < -16) ? this.residual + 16 : 0;
                 }
             }
             if (this.resetView === true) {
@@ -178,7 +178,7 @@ let processor = {
     initEvent: function() {
         this.content.addEventListener("mousemove", function(e) {
             if (this.lastPoint !== undefined) {
-                this.residual += (e.clientX - this.lastPoint)*8;
+                this.residual += (e.clientX - this.lastPoint);
                 this.lastPoint = e.clientX;
 
                 if (this.residual < 0) {
@@ -248,7 +248,7 @@ let processor = {
         this.loading = document.getElementById("loading");
         this.ctx = this.canvas.getContext("2d");
         this.fps = 24;
-        this.defaultSpeed = 35;
+        this.defaultSpeed = 45;
         this.videoSpeed = 0;
         this.state = this.config[6];
         this.lastPoint = undefined;
