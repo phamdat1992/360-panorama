@@ -1,0 +1,145 @@
+#content {
+    overflow: hidden;
+    position: fixed;
+    width: 480px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #141517;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 45px 100px rgba(0, 0, 0, 0.4);
+    padding: 5px;
+}
+
+#video {
+    display: none;
+}
+
+.lds-dual-ring {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hidden-loading {
+    display: none;
+}
+
+.hidden-move-button {
+    display: none;
+}
+
+#control {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+    width: 105px;
+    height: 80px;
+    position: fixed;
+    bottom: -30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#button-left, #button-right {
+    color: white;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+#button-left {
+    position: absolute;
+    left: 5px;
+}
+
+#button-right {
+    position: absolute;
+    right: 5px;
+}
+
+#move-control {
+    position: absolute;
+    color: white;
+    width: inherit;
+    height: inherit;
+}
+
+.move {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    border-radius: 90px;
+    background-color: rgba(255, 255, 255, .15);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    backdrop-filter: blur(5px);
+}
+
+#move-left {
+    left: 15%;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+
+#move-right {
+    right: 25%;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+
+#move-forward {
+    top: 40%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+#move-back {
+    bottom: 20%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.icon-move-left {
+    margin: 5px;
+}
+
+.icon-move-right {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.icon-move-forward {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.icon-move-back {
+    margin-top: 5px;
+    margin-left: 20px;
+}
