@@ -4,8 +4,10 @@ let processor = {
         this.image.addEventListener("load", function(){
             this.height = this.panorama.offsetHeight * 10.0 / 8.0;
             this.width = this.image.width / this.image.height * this.height;
+            let backgroundPx = parseInt((this.panorama.offsetHeight - this.height)/2, 10);
 
             this.panorama.style.backgroundSize = this.width + 'px' + ' ' + this.height + 'px';
+            this.panorama.style.backgroundPosition = '0px' + ' ' + backgroundPx + 'px';
         }.bind(this), false);
 
         this.panorama.addEventListener("mousedown", function(){
