@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+}
+
+#panorama {
+    width: 100vw;
+    height: 100vh;
+    background: url("../img/test_019.jpg") 0 0 repeat-x;
+}
+
+#image {
+    display: none;
+    visibility: hidden;
+}
