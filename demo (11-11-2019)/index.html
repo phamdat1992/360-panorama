@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>demo</title>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
+    <link rel="stylesheet" href="./asset/fontawesome/css/all.css">
     <link rel="stylesheet" href="./asset/style/main.css"/>
 
+    <script defer src="./asset/fontawesome/js/all.js"></script>
     <script defer src="./asset/js/main.js"></script>
 </head>
+
 <body>
-    <img id="image" src="./asset/img/test_019.jpg"/>
-    <div id="panorama"></div>
+    <div id="content">
+        <img id="image" src="./asset/img/1.jpg"/>
+        <div id="panorama"></div>
+
+        <div id="control">
+            <i class="far fa-dot-circle fa-5x" id="move-up"></i>
+            <i class="far fa-dot-circle fa-5x" id="move-left"></i>
+            <i class="far fa-dot-circle fa-5x" id="move-down"></i>
+            <i class="far fa-dot-circle fa-5x" id="move-right"></i>
+        </div>
+    </div>
 </body>
 </html>

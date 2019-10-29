@@ -5,10 +5,25 @@ body {
 #panorama {
     width: 100vw;
     height: 100vh;
-    background: url("../img/test_019.jpg") 0 0 repeat-x;
+    background: url("../img/1.jpg") 0 0 repeat-x;
 }
 
 #image {
     display: none;
     visibility: hidden;
+}
+
+#control {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    color: cornsilk;
+    opacity: 0.5;
+    background: transparent;
+}
+
+#move-up, #move-left, #move-down, #move-right {
+    position: absolute;
 }
