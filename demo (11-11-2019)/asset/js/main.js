@@ -1,287 +1,199 @@
 let processor = {
     config: {
-        1 :{
-            url: "./asset/img/1.jpg",
+        f :{
+            url: "./asset/img/f.jpg",
             map: [
                 {
-                    id: 2,
-                    px: 0.0,
-                    py: 0.8,
-                    initDy: 0.17,
-                },
-                {
-                    id: 'a3',
-                    px: 0.0,
-                    py: 0.67,
-                    initDy: 0.1,
-                },
-                {
-                    id: 'b3',
-                    px: 0.128,
-                    py: 0.8,
+                    id: 'l',
+                    px: 0.25,
+                    py: 0.6,
                     initDy: -0.2,
                 },
                 {
-                    id: 'b4',
-                    px: 0.19,
-                    py: 0.68,
-                    initDy: -0.1,
-                },
-            ],
-            initDy: -0.17,
-        },
-        2: {
-            url: "./asset/img/2.jpg",
-            map: [
-                {
-                    id: 1,
-                    px: 0.43,
-                    py: 0.8,
-                    initDy: -0.3,
-                },
-                {
-                    id:'a3',
-                    px: -0.05,
-                    py: 0.74,
-                    initDy: 0.1,
-                },
-                {
-                    id: 'b3',
-                    px: 0.2,
-                    py: 0.76,
-                    initDy: -0.3,
-                },
-                {
-                    id: 'a4',
-                    px: -0.2,
-                    py: 0.74,
+                    id: 'r',
+                    px: 0.72,
+                    py: 0.6,
                     initDy: 0.5,
                 },
                 {
-                    id: 'b4',
-                    px: 0.2,
-                    py: 0.67,
-                    initDy: -0.1,
-                },
-            ]
-        },
-        a3: {
-            url: "./asset/img/3a.jpg",
-            map: [
-                {
-                    id: 2,
-                    px: 0.56,
-                    py: 0.85,
-                    initDy: -0.3,
-                },
-                {
-                    id: 'a4',
-                    px: -0.2,
-                    py: 0.74,
-                    initDy: 0.5,
-                },
-                {
-                    id: 1,
-                    px: 0.56,
-                    py: 0.67,
-                    initDy: -0.3,
-                },
-                {
-                    id: 'a5',
-                    px: -0.2,
-                    py: 0.64,
-                    initDy: 0.3,
-                },
-            ]
-        },
-        a4: {
-            url: "./asset/img/4a.jpg",
-            map: [
-                {
-                    id: 'a3',
-                    px: 0.162,
-                    py: 0.8,
-                    initDy: -0.15,
-                },
-                {
-                    id: 'a5',
-                    px: -0.33,
-                    py: 0.74,
-                    initDy: 0.3,
-                },
-                {
-                    id: 2,
-                    px: 0.3,
-                    py: 0.77,
-                    initDy: -0.15,
-                },
-                {
-                    id: 'b3',
-                    px: 0.265,
-                    py: 0.65,
+                    id: 'rm',
+                    px: 0.51,
+                    py: 0.52,
                     initDy: -0.4,
                 },
-            ]
-        },
-        a5: {
-            url: "./asset/img/5a.jpg",
-            map: [
                 {
-                    id: 'a4',
-                    px: -0.65,
-                    py: 0.77,
-                    initDy: 0,
+                    id: 'lt',
+                    px: 0.41,
+                    py: 0.48,
+                    initDy: 0.4,
                 },
                 {
-                    id: 'a3',
-                    px: -0.65,
-                    py: 0.67,
+                    id: 'rt',
+                    px: 0.51,
+                    py: 0.48,
+                    initDy: -0.4,
+                },
+                {
+                    id: 'i1',
+                    px: 0.472,
+                    py: 0.48,
+                    initDy: -0.3,
+                },
+            ],
+            initDy: -0.35,
+        },
+        l: {
+            url: "./asset/img/l.jpg",
+            map: [
+                {
+                    id: 'f',
+                    px: 0.7,
+                    py: 0.65,
+                    initDy: 0.4,
+                },
+                {
+                    id:'r',
+                    px: 0.7,
+                    py: 0.55,
+                    initDy: 0.42,
+                },
+                {
+                    id: 'lt',
+                    px: 0.42,
+                    py: 0.5,
+                    initDy: 0.4,
+                },
+                {
+                    id: 'i1',
+                    px: 0.49,
+                    py: 0.52,
+                    initDy: -0.3,
+                },
+            ]
+        },
+        r: {
+            url: "./asset/img/r.jpg",
+            map: [
+                {
+                    id: 'f',
+                    px: 0.2,
+                    py: 0.75,
+                    initDy: -0.2,
+                },
+                {
+                    id: 'l',
+                    px: 0.2,
+                    py: 0.6,
                     initDy: -0.15,
                 },
-            ]
-        },
-        b3: {
-            url: "./asset/img/3b.jpg",
-            map: [
                 {
-                    id: 'b4',
-                    px: -0.6,
-                    py: 0.8,
-                    initDy: -0.1,
+                    id: 'rm',
+                    px: 0.42,
+                    py: 0.55,
+                    initDy: -0.3,
                 },
                 {
-                    id: '2',
-                    px: -0.1,
-                    py: 0.8,
-                    initDy: 0.48,
+                    id: 'rt',
+                    px: 0.42,
+                    py: 0.5,
+                    initDy: -0.33,
                 },
                 {
-                    id: 'b5',
-                    px: 0.58,
-                    py: 0.68,
-                    initDy: 0.7,
-                },
-                {
-                    id: 1,
-                    px: -0.2,
-                    py: 0.75,
-                    initDy: -0.5,
-                },
-                {
-                    id: 'a4',
-                    px: -0.01,
-                    py: 0.65,
-                    initDy: 0.3,
-                },
-                {
-                    id: 'a5',
-                    px: -0.03,
-                    py: 0.6,
-                    initDy: 0.1,
+                    id: 'i1',
+                    px: 0.37,
+                    py: 0.5,
+                    initDy: -0.3,
                 },
             ]
         },
-        b4: {
-            url: "./asset/img/4b.jpg",
+        lt: {
+            url: "./asset/img/lt.jpg",
             map: [
                 {
-                    id: 'b5',
-                    px: 0.5,
-                    py: 0.74,
-                    initDy: 0.57,
-                },
-                {
-                    id: 'b3',
-                    px: -0.22,
-                    py: 0.78,
+                    id: 'l',
+                    px: 0.18,
+                    py: 0.55,
                     initDy: 0.2,
                 },
                 {
-                    id: 'b7',
-                    px: 0.5,
-                    py: 0.58,
-                    initDy: -0.2,
-                },
-                {
-                    id: 'b6',
-                    px: 0.5,
-                    py: 0.66,
-                    initDy: 0.4,
-                },
-                {
-                    id: 2,
-                    px: -0.22,
-                    py: 0.68,
-                    initDy: 0.48,
+                    id: 'rt',
+                    px: -0.05,
+                    py: 0.6,
+                    initDy: -0.55,
                 },
             ]
         },
-        b5: {
-            url: "./asset/img/5b.jpg",
+        rm: {
+            url: "./asset/img/rm.jpg",
             map: [
                 {
-                    id: 'b4',
+                    id: 'rt',
+                    px: -0.55,
+                    py: 0.55,
+                    initDy: -0.33,
+                },
+                {
+                    id: 'f',
                     px: 0.02,
-                    py: 0.8,
+                    py: 0.52,
                     initDy: 0.1,
                 },
                 {
-                    id: 'b6',
-                    px: -0.45,
-                    py: 0.74,
-                    initDy: 0.4,
-                },
-                {
-                    id: 'b7',
-                    px: -0.48,
-                    py: 0.62,
-                    initDy: -0.2,
+                    id: 'l',
+                    px: 0.07,
+                    py: 0.52,
+                    initDy: 0.0,
                 },
             ]
         },
-        b6: {
-            url: "./asset/img/6b.jpg",
+        rt: {
+            url: "./asset/img/rt.jpg",
             map: [
                 {
-                    id: 'b5',
-                    px: 0.2,
-                    py: 0.76,
-                    initDy: 0.18,
+                    id: 'rm',
+                    px: -0.05,
+                    py: 0.6,
+                    initDy: 0.05,
                 },
                 {
-                    id: 'b7',
-                    px: -0.3,
-                    py: 0.74,
-                    initDy: -0.2,
-                },
-                {
-                    id: 'b4',
-                    px: 0.2,
-                    py: 0.67,
-                    initDy: 0.1,
+                    id: 'lt',
+                    px: 0.18,
+                    py: 0.5,
+                    initDy: 0.6,
                 },
             ]
         },
-        b7: {
-            url: "./asset/img/7b.jpg",
+        i1: {
+            url: "./asset/img/i1.jpg",
             map: [
                 {
-                    id: 'b6',
-                    px: -0.1,
-                    py: 0.8,
-                    initDy: -0.02,
+                    id: 'i2',
+                    px: 0.4,
+                    py: 0.5,
+                    initDy: 0.7,
                 },
                 {
-                    id: 'b5',
-                    px: -0.1,
-                    py: 0.71,
+                    id: 'r',
+                    px: -0.15,
+                    py: 0.53,
+                    initDy: 0.3,
+                },
+            ]
+        },
+        i2: {
+            url: "./asset/img/i2.jpg",
+            map: [
+                {
+                    id: 'i1',
+                    px: 0.9,
+                    py: 0.7,
                     initDy: 0.18,
                 },
                 {
-                    id: 'b4',
-                    px: -0.1,
-                    py: 0.62,
-                    initDy: 0.1,
+                    id: 'r',
+                    px: 0.87,
+                    py: 0.5,
+                    initDy: -0.9,
                 },
             ]
         },
@@ -289,7 +201,7 @@ let processor = {
 
     initEvent: function() {
         this.image.addEventListener("load", function(){
-            this.height = this.panorama.offsetHeight * 10.0 / 8.0;
+            this.height = this.panorama.offsetHeight * 10.0 / 3.33;
             this.width = this.image.width / this.image.height * this.height;
             let backgroundPx = parseInt((this.panorama.offsetHeight - this.height)/2, 10);
             let dx = this.initDy * this.width;
@@ -420,7 +332,7 @@ let processor = {
         this.image = document.getElementById("image");
         this.content = document.getElementById("content");
         this.control = document.getElementById("control");
-        this.currentId = 1;
+        this.currentId = 'f';
         this.eventControl = [];
 
         this.image.src = this.config[this.currentId].url;
